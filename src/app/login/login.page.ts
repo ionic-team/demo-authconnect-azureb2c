@@ -13,11 +13,12 @@ export class LoginPage implements OnInit {
   constructor(private authService: AuthenticationService, private loadingController: LoadingController) {}
 
   async ngOnInit() {
-    // If coming back after logging into Auth0,
-    // and using CURRENT Implicit (web) Login
+    // Web only: If redirected back to app after login and using implicitLogin = 'CURRENT' (current window),
+    // pass along the auth details, such as access token, to Auth Connect
     if (window.location.hash) {
       const loadingIndicator = await this.showLoadingIndictator();
       try {
+        // Once handleCallback completes, Auth Connect calls onLoginSuccess() in Authentication service
         await this.authService.handleCallback(window.location.href);
       } catch (e) {
         this.errorMessage = e.message;
