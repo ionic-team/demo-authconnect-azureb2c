@@ -13,7 +13,6 @@ export class HomePage implements OnInit {
 
   async ngOnInit() {
     this.user = await this.authService.getUserInfo();
-    console.log(this.user);
   }
 
   async logout() {
