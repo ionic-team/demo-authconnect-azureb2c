@@ -1,7 +1,6 @@
 import { Component } from '@angular/core';
 import { Platform, NavController } from '@ionic/angular';
-import { SplashScreen } from '@ionic-native/splash-screen/ngx';
-import { StatusBar } from '@ionic-native/status-bar/ngx';
+import { Plugins } from '@capacitor/core';
 import { AuthenticationService } from './services/authentication.service';
 
 @Component({
@@ -13,20 +12,18 @@ export class AppComponent {
   constructor(
     private auth: AuthenticationService,
     private navController: NavController,
-    private platform: Platform,
-    private splashScreen: SplashScreen,
-    private statusBar: StatusBar
+    private platform: Platform
   ) {
     this.initializeApp();
 
     this.auth.loginStatusChanged.subscribe(authenticated => this.handleAuthChange(authenticated));
   }
 
-  initializeApp() {
-    this.platform.ready().then(() => {
-      this.statusBar.styleDefault();
-      this.splashScreen.hide();
-    });
+  async initializeApp() {
+    const { SplashScreen } = Plugins;
+    if (this.platform.is('hybrid')) {
+      await SplashScreen.hide();
+    }
   }
 
   // Handle login status change event

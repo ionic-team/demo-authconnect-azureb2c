@@ -14,7 +14,7 @@ Demo video 👇
 
 ## Implementation Details
 
-This is a modified version of the Ionic `blank` starter project. Major components include:
+This is a modified version of the Ionic `blank` starter project. Major portions of the code include:
 
 * The Home page (`src/app/home`). Displays the signed-in user's details (retrieved from Azure). Includes a button to log out of the app.
 * The Login page (`src/app/login`). Protects the Home page from unauthorized access. User must sign in first via this page using Auth Connect.
