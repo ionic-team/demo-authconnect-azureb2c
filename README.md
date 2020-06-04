@@ -6,9 +6,7 @@ To see this app in action, check out the [Capacitor 2.0 Launch presentation](htt
 
 ## User Experience
 
-Demo video 👇
-
-(coming soon)
+[Demo video here](https://youtu.be/v-LuS6aiRDo).
 
 [Ionic Auth Connect](https://ionicframework.com/auth-connect) is used to implement a simple login/logout experience (with Azure AD B2C as the authentication provider) that works on the web, iOS, and Android. [Capacitor](https://capacitor.ionicframework.com) is used to deploy the app to a mobile device.
 
