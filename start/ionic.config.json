@@ -1,0 +1,7 @@
+{
+  "name": "demo-authconnect-azureb2c",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
